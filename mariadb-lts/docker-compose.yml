@@ -1,0 +1,12 @@
+version: "3"
+services:
+  mariadb-lts:
+    container_name: mariadb-lts
+    image: mariadb:lts
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=Password-1234
+    volumes:
+      - ./db-data:/var/lib/mysql
+      - ./db-script:/docker-entrypoint-initdb.d
